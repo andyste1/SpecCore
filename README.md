@@ -6,9 +6,9 @@ The project is just a bit of fun, which I hope brings a smile to the face of 80s
 
 ## Getting Started
 
-Create a .Net Core WPF App project and install the NuGet package "[TODO](TODO)".
+Download the source and compile it. You'll find a few basic examples that you can try - edit MainWindow.xaml.cs code-behind, and uncomment one of the lines *only* in the constructor.
 
-Add a class to your project that inherits from  SpeccyEngine. Implement the necessary constructor:-
+To write your own game or program, add a class that inherits from SpeccyEngine. Implement the necessary constructor, and override the Init() and DoFrame() methods. The class should look something like this:-
 
     public class HelloWorld : SpeccyEngine
     {
@@ -30,7 +30,7 @@ Override the Init() method. This is called once when your application first runs
         Print(5, 24, "Hello World!"); // Display some text
     }
 
-Now override the DoFrame() method. This is called several times per second, and is where you animate your game - think of it as rendering a single "frame". You might respond to a keypress, move your spaceship one column to the right, move the advancing invaders down one row, and so on:-
+Now override the DoFrame() method (note the "async" keyword). This is called several times per second, and is where you animate your game - think of it as rendering a single "frame". You might respond to a keypress, move your spaceship one column to the right, move the advancing invaders down one row, and so on:-
 
     protected override async void DoFrame()
     {
